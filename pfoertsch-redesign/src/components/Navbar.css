@@ -1,0 +1,612 @@
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0f172a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo {
+  text-decoration: none;
+  color: #ede9e9;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+
+/* ================================
+   DESKTOP NAV
+================================ */
+
+.navbar-links-desktop {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-links-desktop > a,
+.publications-trigger {
+  position: relative;
+  text-decoration: none;
+  color: #efeded;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.navbar-links-desktop > a:hover,
+.publications-trigger:hover {
+  color: #8b1e2d;
+}
+
+
+/* ================================
+   PUBLICATIONS DROPDOWN
+================================ */
+
+.publications-dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.publications-trigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #efeded;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+.publications-trigger:hover {
+  color: #8b1e2d;
+}
+
+.dropdown-arrow {
+  font-size: 15px;
+  line-height: 1;
+  margin-top: -2px;
+  transition: transform 0.2s ease;
+}
+
+.publications-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* ================================
+   DROPDOWN PANEL
+================================ */
+
+.publications-menu {
+  position: absolute;
+
+  /* IMPORTANT: no large gap */
+  top: 100%;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(8px);
+
+  width: 650px;
+
+  background: var(--pf-card-bg);
+
+  border: 1px solid var(--pf-border);
+  border-radius: 10px;
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.18),
+    0 5px 15px rgba(15, 23, 42, 0.08);
+
+  padding: 24px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+
+/* Invisible hover bridge */
+.publications-menu::after {
+  content: "";
+
+  position: absolute;
+
+  top: -15px;
+  left: 0;
+
+  width: 100%;
+  height: 15px;
+
+  background: transparent;
+}
+
+
+/* Dropdown arrow */
+.publications-menu::before {
+  content: "";
+
+  position: absolute;
+
+  top: -8px;
+  left: 50%;
+
+  width: 16px;
+  height: 16px;
+
+  background: #ffffff;
+
+  border-left: 1px solid #e5e7eb;
+  border-top: 1px solid #e5e7eb;
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* SHOW DROPDOWN */
+.publications-dropdown:hover .publications-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* ================================
+   DROPDOWN HEADER
+================================ */
+
+.publications-menu-header {
+  color: var(--pf-text-primary);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  padding-bottom: 15px;
+  margin-bottom: 8px;
+
+  border-bottom: 1px solid var(--pf-border);
+}
+
+
+/* ================================
+   DROPDOWN GRID
+================================ */
+
+.publications-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 25px;
+}
+
+
+/* ================================
+   DROPDOWN LINKS
+================================ */
+
+.publication-dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 46px;
+
+  padding: 8px 4px;
+
+  text-decoration: none;
+
+  color: var(--pf-text-primary);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  border-bottom: 1px solid var(--pf-border);
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.publication-dropdown-link:hover {
+  color: #8b1e2d;
+  padding-left: 9px;
+}
+
+.dropdown-link-arrow {
+  font-size: 14px;
+
+  opacity: 0;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.publication-dropdown-link:hover .dropdown-link-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* ================================
+   NAVBAR ACTIONS
+================================ */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.icon-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #8b1e2d;
+}
+
+
+/* ================================
+   APPOINTMENT BUTTON
+================================ */
+
+.appointment-btn {
+  text-decoration: none;
+
+  background: #111;
+  color: white;
+
+  padding: 12px 18px;
+
+  font-size: 13px;
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.appointment-btn:hover {
+  background: #8b1e2d;
+}
+
+
+/* ================================
+   HAMBURGER
+================================ */
+
+.menu-toggle {
+  display: none;
+
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  width: 32px;
+  height: 32px;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  background: #ffffff;
+  border-radius: 2px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ================================
+   MOBILE NAV
+================================ */
+
+.navbar nav.navbar-links-mobile {
+  display: none;
+}
+
+
+/* ================================
+   MOBILE PUBLICATIONS
+================================ */
+
+.mobile-publications {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-publications-trigger {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: none;
+  border: none;
+
+  color: #efeded;
+
+  font-size: 15px;
+
+  padding: 16px 40px;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobile-publications-trigger:hover {
+  color: #8b1e2d;
+}
+
+.mobile-arrow {
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.mobile-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+
+/* ================================
+   MOBILE PUBLICATIONS SUBMENU
+================================ */
+
+.mobile-publications-menu {
+  display: flex;
+  flex-direction: column;
+
+  max-height: 0;
+  overflow: hidden;
+
+  background: #0b1324;
+
+  transition: max-height 0.35s ease;
+}
+
+.mobile-publications-menu.open {
+  max-height: 700px;
+}
+
+.mobile-publications-menu a {
+  padding: 13px 55px !important;
+
+  color: #cbd5e1 !important;
+
+  font-size: 13px !important;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.mobile-publications-menu a:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+
+/* ================================
+   MOBILE CONTROLS
+================================ */
+
+.mobile-toggle-row {
+  display: flex;
+  gap: 12px;
+  padding: 16px 40px;
+}
+
+.mobile-toggle-row .icon-toggle {
+  width: auto;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 13px;
+}
+
+
+/* ================================
+   MOBILE APPOINTMENT
+================================ */
+
+.appointment-btn-mobile {
+  margin: 16px 40px;
+
+  text-align: center;
+
+  background: #111;
+  color: white;
+
+  padding: 14px 18px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  border-radius: 4px;
+}
+
+.appointment-btn-mobile:hover {
+  background: #8b1e2d;
+}
+
+
+/* ================================
+   TABLET / MOBILE
+================================ */
+
+@media (max-width: 1100px) {
+
+  .navbar-links-desktop {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar nav.navbar-links-mobile {
+    display: flex;
+
+    flex-direction: column;
+
+    max-height: 0;
+    overflow: hidden;
+
+    background: #0f172a;
+
+    transition: max-height 0.4s ease;
+  }
+
+  .navbar nav.navbar-links-mobile.open {
+    max-height: 1200px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-links-mobile > a {
+    text-decoration: none;
+
+    color: #efeded;
+
+    font-size: 15px;
+
+    padding: 16px 40px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .navbar-links-mobile > a:hover {
+    color: #8b1e2d;
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+  .navbar-container {
+    padding: 16px 20px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .navbar-actions {
+    gap: 10px;
+  }
+
+  .navbar-actions .appointment-btn {
+    display: none;
+  }
+
+  .navbar-links-mobile > a,
+  .mobile-publications-trigger {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .mobile-publications-menu a {
+    padding-left: 35px !important;
+    padding-right: 20px !important;
+  }
+
+  .appointment-btn-mobile {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .mobile-toggle-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

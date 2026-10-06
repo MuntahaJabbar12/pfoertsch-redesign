@@ -1,0 +1,131 @@
+.books-section {
+  padding: 120px 8%;
+  background: #0f172a;
+  color: #ffffff; /* Sets base text color to pure white */
+  overflow: hidden;
+}
+
+.books-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 55px;
+}
+
+/* Eyebrow / Sub-label styling if present in your header */
+.books-header .eyebrow {
+  color: #fecdd3; /* Soft rose highlight for dark red background */
+}
+
+.books-header h2 {
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -2px;
+  margin: 0;
+  color: #ffffff; /* Ensures strong contrast for the title */
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-controls button {
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Translucent light border */
+  background: rgba(255, 255, 255, 0.1); /* Subtle filled button base */
+  color: #ffffff; /* Light arrow symbols */
+
+  font-size: 20px;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.carousel-controls button:hover {
+  background: #d8d4d4;
+  color: #e9e6e6; /* Inverts color on hover */
+  border-color: #ffffff;
+}
+
+.books-carousel {
+  display: flex;
+  gap: 28px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  padding-bottom: 20px;
+
+  scrollbar-width: none;
+}
+
+.books-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Book Captions & Subtext inside Carousel Cards */
+.books-carousel p,
+.books-carousel span,
+.books-carousel .amazon-edition {
+  color: #f1f5f9; /* Soft off-white for card titles and details */
+}
+
+.books-footer {
+  margin-top: 45px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.945); /* Light separator line */
+  padding-top: 25px;
+}
+
+.books-footer p {
+  color: #f1f5f9; /* Muted off-white text for readability */
+  font-size: 14px;
+}
+
+.books-footer a {
+  color: #ffffff; /* Bright link text */
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.books-footer a:hover {
+  color: #fecdd3; /* Soft rose highlight on hover */
+}
+
+@media (max-width: 700px) {
+
+  .books-section {
+    padding: 80px 7%;
+  }
+
+  .books-header {
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .carousel-controls {
+    margin-top: 5px;
+  }
+
+  .carousel-controls button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .books-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+}

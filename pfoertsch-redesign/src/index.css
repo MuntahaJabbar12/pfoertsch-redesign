@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================================
+   THEME VARIABLES
+   Light mode is the default. Dark mode overrides via [data-theme="dark"].
+   These variables control the LIGHT CONTENT sections of each page
+   (white cards, light-blue page backgrounds, dark body text).
+   The existing navy hero/feature sections stay navy in both modes
+   since they were already designed dark - only the light sections invert.
+   ============================================================ */
+:root {
+  --pf-page-bg: #eef2ff;
+  --pf-card-bg: #ffffff;
+  --pf-text-primary: #0f172a;
+  --pf-text-secondary: #64748b;
+  --pf-border: #e2e8f0;
+  --pf-input-bg: #ffffff;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --pf-page-bg: #0a0e1a;
+  --pf-card-bg: #131a2b;
+  --pf-text-primary: #f1f5f9;
+  --pf-text-secondary: #94a3b8;
+  --pf-border: #263049;
+  --pf-input-bg: #1a2338;
+  color-scheme: dark;
+}
+
+/* Override the site's existing white-card variable so any page already
+   using var(--bg-card) automatically follows dark mode too. --bg-main
+   (navy sections) is intentionally left alone since it's already dark.
+   Using html[data-theme="dark"] (not just the attribute selector) to
+   guarantee this beats each page's own :root declaration regardless
+   of CSS load order, since :root and [data-theme] alone share the
+   same specificity. */
+html[data-theme="dark"] {
+  --bg-card: #131a2b;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--pf-page-bg);
+  color: var(--pf-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

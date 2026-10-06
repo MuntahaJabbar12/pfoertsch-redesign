@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      IMPORTANT: title, meta description, canonical URL, Open Graph, and
+      Twitter Card tags are intentionally NOT hardcoded here. Every page
+      sets its own unique versions of these via the <SEO> component (see
+      src/components/SEO.jsx and main.jsx's HelmetProvider), which runs
+      immediately on mount. Duplicating them here as static fallbacks
+      would create two competing tags with the same name — react-helmet
+      adds its version alongside these rather than replacing them, and
+      crawlers/browsers can end up reading the wrong (this static) one.
+      The only genuine risk window is the brief moment before React
+      mounts, which is negligible for both users and modern crawlers
+      (Google's crawler executes JavaScript before reading meta tags).
+    -->
+    <title>Prof. Waldemar Pfoertsch</title>
+
+    <!--
+      Structured data (JSON-LD) — tells Google this page represents a real
+      Person, which can power richer search results (knowledge panel-style
+      info). This is genuinely valuable SEO, not just decoration.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Waldemar Pfoertsch",
+      "jobTitle": "Professor of International Business",
+      "url": "https://www.pfoertsch.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/waldemar-pfoertsch-1b41b94/",
+        "https://scholar.google.com/citations?user=IAxHVSAAAAAJ&hl=de",
+        "https://www.researchgate.net/profile/Waldemar-Pfoertsch",
+        "https://www.amazon.com/stores/author/B00D71YZ6O",
+        "https://en.wikipedia.org/wiki/Waldemar_Pf%C3%B6rtsch"
+      ],
+      "knowsAbout": ["B2B Branding", "Human-to-Human Marketing", "Brand Management", "Digital Marketing", "Strategic Innovation"]
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RP8R3LJQ3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8RP8R3LJQ3');
+    </script>
+
+    <!-- TODO: replace with the real verification meta tag Google Search Console gives you -->
+    <meta name="google-site-verification" content="CRGBI6ZaaHrfHpI1mWMowLoZuT8zpBM5SMMOvAGszk8" />
+    <script type="module" crossorigin src="/assets/index-BDZXrcSe.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CvQB7Wfy.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

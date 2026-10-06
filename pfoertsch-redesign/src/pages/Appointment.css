@@ -1,0 +1,144 @@
+/* Page Canvas (Matches Home Page Diagonal Background) */
+.appointment-page {
+  background-color: var(--pf-page-bg); /* Crisp Light Blue Center */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080' width='100%25' height='100%25'%3E%3C!-- Top-Left Diagonal Layered Stripes --%3E%3Cpolygon points='-100,-100 800,-100 -100,320' fill='%231d2756' /%3E%3Cpolygon points='-100,-100 650,-100 -100,240' fill='%236366f1' /%3E%3Cpolygon points='100,-100 950,-100 -100,380' fill='%232563eb' /%3E%3Cpolygon points='250,-100 1100,-100 -100,450' fill='%23ffffff' /%3E%3Cpolygon points='0,200 -100,200 -100,300' fill='%23ffffff' /%3E%3C!-- Bottom-Right Diagonal Layered Stripes --%3E%3Cpolygon points='2020,1180 1120,1180 2020,760' fill='%231d2756' /%3E%3Cpolygon points='2020,1180 1270,1180 2020,840' fill='%236366f1' /%3E%3Cpolygon points='1820,1180 970,1180 2020,700' fill='%232563eb' /%3E%3Cpolygon points='1670,1180 820,1180 2020,630' fill='%23ffffff' /%3E%3Cpolygon points='1920,880 2020,880 2020,780' fill='%23ffffff' /%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  box-sizing: border-box;
+}
+
+/* HERO SECTION */
+.appointment-hero {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  background: #0f172a; /* Deep Navy Container */
+  color: #ffffff;
+  padding: 80px 8%;
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.35);
+  box-sizing: border-box;
+}
+
+.appointment-hero h1 {
+  font-size: clamp(40px, 5vw, 60px);
+  margin: 20px 0;
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+/* FORM SECTION */
+.appointment-form-section {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  background: #020617; /* Ultra Dark Navy Container */
+  color: #ffffff;
+  padding: 60px 8%;
+  border-radius: 30px;
+  box-shadow: 0 30px 60px rgba(2, 6, 23, 0.4);
+  box-sizing: border-box;
+}
+
+.appointment-form {
+  display: grid;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea {
+  padding: 16px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+/* Change date picker calendar icon to white */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.submit-btn {
+  background: #2563eb;
+  color: #ffffff;
+  border: 0;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(-2px);
+}
+
+.form-status {
+  margin-top: 16px;
+  font-size: 13.5px;
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.form-status.error {
+  background: rgba(230, 57, 70, 0.12);
+  color: #fca5a5;
+}
+
+.success-box {
+  text-align: center;
+  padding: 60px 20px;
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .appointment-page {
+    padding: 40px 0;
+    gap: 30px;
+  }
+
+  .appointment-hero {
+    padding: 50px 6%;
+    border-radius: 20px;
+  }
+
+  .appointment-form-section {
+    padding: 40px 6%;
+    border-radius: 20px;
+  }
+}
